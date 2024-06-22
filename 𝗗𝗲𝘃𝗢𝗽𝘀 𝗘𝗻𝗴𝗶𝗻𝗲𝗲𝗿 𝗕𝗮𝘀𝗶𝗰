@@ -1,0 +1,136 @@
+𝐃𝐞𝐯𝐎𝐩𝐬 𝐄𝐧𝐠𝐢𝐧𝐞𝐞r - Questions
+
+❓What is git stash, git cherry-pick, and git squash?
+
+Git stash allows users to save their 𝘂𝗻𝗰𝗼𝗺𝗺𝗶𝘁𝘁𝗲𝗱 𝗳𝗶𝗹𝗲𝘀 and work in progress to a local stash and go back to the last commit done on the branch (the HEAD).
+The command saves your local modifications away and reverts the working directory to match the HEAD commit.
+
+It allows you to store your un-committed modifications in a buffer area called stash and delete them from the branch you are working on.
+You may later retrieve them by applying the stash.
+
+
+Cherry-pick, still creates new commit hashes on the active branch.
+When you want to pick a specific commit from one branch and apply it on another branch.
+
+
+The “git squash” enables you to merge multiple commits into a single, cleaner commit.
+Combine all those commits into a single commit. Use git rebase -i HEAD~n (where n is the number of commits to squash).
+In the interactive rebase, mark commits as “squash” to combine them into a single commit.
+
+-------------------------------------------------
+
+❓What is the home path of the Jenkins file?
+
+For the default installation location to C:\Program Files\Jenkins, a file called initialAdminPassword can be found under C:\Program Files\Jenkins\secrets.
+However, if a custom path for Jenkins installation was selected, then you should check that location for initialAdminPassword file.
+
+The default location for the Jenkins configuration file on Ubuntu and Debian is /etc/default/jenkins.
+If you are working with RedHat, CentOS, (or) Fedora, the Jenkins configuration file is located at /etc/sysconfig/jenkins.
+
+MAC OS
+/Users/myusername/.jenkins/secrets/initialAdminPassword
+
+-------------------------------------------------
+
+❓How will you take a backup in Jenkins? Mention the plugin you would install.
+
+From the main menu select Manage Jenkins, then go to Plugins>Available and search for backup.
+
+There are two other alternatives to this plugin:
+The SCM Sync configuration plugin allows automatically tracking changes brought to the global configuration of Jenkins and to the jobs configuration into a configuration management system (Subversion, etc.).
+The thinBackup plugin focuses on backuping Jenkins’s global configuration and jobs configuration. It also offers a scheduling feature (if you think the efforts on this plugin and the Backup one should be merged, just notify us!).
+
+-------------------------------------------------
+
+❓How can a pipeline be triggered in Jenkins?
+
+1. Manual Build Trigger
+2. Scheduled Build Trigger
+3. SCM (Source Code Management) Trigger
+4. Webhooks Trigger
+5. Dependency Build Trigger
+6. Parameterized Build Trigger
+7. Pipeline Trigger
+8. Remote API Trigger
+9. Plugin-Based Triggers
+10. Create the job to be triggered. Type the project name “Ibbus” (it will be triggered with this name in the pipeline) and select the freestyle project.
+11. Create the Pipeline to trigger. Type the project name “Ibbus” and select the pipeline project.
+12. Test the Trigger.
+
+-------------------------------------------------
+
+❓What are the plugins you are familiar with in Jenkins?
+
+1. Git
+2. Build Pipeline
+3. Maven
+4. Jira
+5. Amazon Ec2
+6. Kubernetes
+7. AWS Code Deploy
+
+-------------------------------------------------
+
+❓What is healing in Kubernetes? What about in OpenShift?
+
+Kubernetes implements self-healing at the Application Layer. This means that if your app is well-containerized and a pod crashes, Kubernetes will work to reschedule it as soon as possible. Containers are made available for clients only if they are ready to serve.
+Red Hat OpenShift is a cloud-based Kubernetes platform that helps developers build applications. It offers automated installation, upgrades, and life cycle management throughout the container stack – the operating system, Kubernetes and cluster services, and applications – on any cloud.
+
+-------------------------------------------------
+
+❓In Ansible, where are the hosts stored?
+The default location for the inventory file is /etc/ansible/hosts. You can also create project-specific inventory files in alternate locations.
+
+-------------------------------------------------
+
+❓What is the home path of Ansible?
+ansible.cfg (in the current directory)
+
+~/.ansible.cfg (in the home directory) /etc/ansible/ansible.cfg.
+
+-------------------------------------------------
+
+❓What elements are included in Kubernetes manifest files?
+A Kubernetes Manifest file is a YAML (or) JSON file that describes the desired state of a Kubernetes object. These objects can include deployment, replica set, service, and more. Manifest files define the specifications of the object, such as its metadata, properties, and desired state.
+
+-------------------------------------------------
+
+❓What are the two layers in Docker?
+
+1. Base Image Layer
+2. Intermediate Layers
+3. Final Writable Layer
+
+-------------------------------------------------
+
+❓What is the difference between CMD and ENTRYPOINT in Docker?
+
+CMD is to provide defaults for an executing container.
+
+ENTRYPOINT helps you to configure a container that you can run as an executable.
+
+-------------------------------------------------
+
+❓What is a ReplicaSet and what is a Controller in Kubernetes?
+
+ReplicaSet is a type of Kubernetes controller. It is responsible for maintaining a specified number of Pods running at any given time.
+
+A controller in Kubernetes is a software loop that watches the shared state of the cluster through the API server and makes changes attempting to move the current state towards the desired state.
+
+-------------------------------------------------
+
+❓What is uDeploy?
+
+Udeploy, also known as IBM UrbanCode Deploy, is a product for automating the deployment of applications, middleware configuration, and database changes into various environments.
+
+-------------------------------------------------
+
+❓How do you use Terraform TFS files to launch AWS cloud services?
+
+1. Configure the “desired state” in Terraform files (*.tf).
+2. Initialize the workspace using the command terraform init.
+3. Create the plan using a terraform plan.
+4. Apply the plan using Terraform apply.
+5. Destroy the provisioned resources with terraform destroy, when we want to dispose of the infrastructure.
+
+-------------------------------------------------
