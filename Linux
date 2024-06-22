@@ -1,27 +1,29 @@
----
-
 𝗜𝗻𝘁𝗲𝗿𝘃𝗶𝗲𝘄 𝗤𝘂𝗲𝘀𝘁𝗶𝗼𝗻 & 𝗔𝗻𝘀𝘄𝗲𝗿 - 𝗟𝗶𝗻𝘂𝘅
+
 ❓What is the boot process in Linux?
+
 The Linux boot process is divided into six high-level stages:
+
 BIOS - Basic Input/Output System executes MBR
-MBR - Master Boot Record execute GRUB
+MBR - Master Boot Record executes GRUB
 GRUB - Grand Unified Bootloader executes Kernel
 Kernel - Kernel executes /sbin/init
-Init - Init executes runlevel programs
+Init - Init executes run-level programs
 Runlevel - Runlevel programs are executed from /etc/rc.d/rc*.d/
 
 ---
 
-buymeacoffee ☕ 👈 Click the link
 ❓How can you create a zero-size file in Linux?
+
 Shell command $ touch filename results in a zero-byte file filename.
 
 ---
 
 ❓What are 𝘀𝗼𝗳𝘁 𝗹𝗶𝗻𝗸𝘀 and 𝗵𝗮𝗿𝗱 𝗹𝗶𝗻𝗸𝘀 in Linux? How do you create them? What are the differences between these two types of links?
+
 A "soft link" takes more, as it has an inode, and file contents (the path to the target file) it also has the name in the directory.
 Softlink 👈
-A "hardlink" only exists in the name in a directory- and specifies the inode number of the file.
+A "hard link" only exists in the name in a directory- and specifies the inode number of the file.
 Hardlink 👈
 ln  [original filename] [link name] --> Hard link create
 ln  -s [original filename] [link name] --> Soft link create
@@ -31,12 +33,14 @@ Softlink : inode <===file name <==soft link
 ---
 
 ❓What is the first line typically written in a shell script? What is its meaning? What happens if this line is omitted, and how do you run the script in such a case?
+
 It is the first line of the script that would dictate which program to use. The first line starts with the sequence of two characters #! that is called "shebang". This is followed by the program that tells the operating system which interpreter to use to parse the rest of the file.
-#! just happens to be human readable, but that is not required.
+#! just happens to be human-readable, but that is not required.
 
 ---
 
 ❓How can you run a shell script in the background in Linux?
+
 & Symbol
 Another method to run a process in the background is by appending the ampersand symbol & to the command you execute.
 script.sh &
@@ -45,39 +49,47 @@ command &
 ---
 
 ❓What is a 𝗰𝗿𝗼𝗻𝘁𝗮𝗯 in Linux? Explain how it works and how to configure and schedule a job using crontab.
+
 Crontab, which is short for cron table, is a file containing the schedule of various cron entries that should be run at specified times.
 Another way of describing crontab is as a utility that enables tasks to run automatically at regular intervals in the background by the cron daemon.
 Crontab → Scheduling tasks to be executed sometime in the future.
-Refer Crontab link
-Write a Script (Optional) This section explains how to create an example script.
-Create or Edit Crontab File. Open the crontab configuration file for the current user by entering the following command: crontab -e.
-Create the Cron Job.
-Output (Optional).
-Save.
+
+1. Write a Script (Optional) This section explains how to create an example script.
+2. Create (or) Edit the Crontab File. Open the crontab configuration file for the current user by entering the following command: crontab -e.
+3. Create the Cron Job.
+4. Output (Optional).
+5. Save.
 Check Active Cron Jobs.
 
 ---
 
 ❓How do you allow ports in Linux?
+
 sudo ufw allow 53/tcp
 
 ---
 
 ❓How do you troubleshoot a remote server that is experiencing issues?
-Check if the Remote Desktop service is running on the server.
-Check if the server's firewall is blocking Remote Desktop connections.
-Check if the server is configured to allow Remote Desktop connections.
-Could you check if the server's network settings are correct?
+
+1. Check if the Remote Desktop service is running on the server.
+2. Check if the server's firewall is blocking Remote Desktop connections.
+3. Check if the server is configured to allow Remote Desktop connections.
+4. Could you check if the server's network settings are correct?
 
 ---
 
 ❓What are the 𝗽𝗶𝗻𝗴, 𝘁𝗲𝗹𝗻𝗲𝘁, 𝗰𝘂𝗿𝗹, and 𝘄𝗴𝗲𝘁 commands in Linux?
+
 ping is the primary TCP/IP command used to troubleshoot connectivity, reachability, and name resolution.
+
 TELNET is commonly used by terminal emulation programs that allow you to log into a remote host.
 However, TELNET can also be used for terminal-to-terminal communication and interprocess communication.
 TELNET is also used by other protocols (for example, FTP) for establishing a protocol control channel.
+
 curl, which stands for client URL, is a command line tool developers use to transfer data to and from a server. curl is its ability to download recursively.
+
 Wget is a command-line tool that allows downloading files from the internet.
+
 ping google.com
 type telnet <target ip> <target port>
 curl http://someurl.com
@@ -86,25 +98,30 @@ wget -O [file_name] [URL]
 ---
 
 ❓How can you check the status of services on a Linux machine?
+
 Use the systemctl status service-name command.
 
 ---
 
 ❓How do you kill a process in Linux?
+
 kill -9 Linux Command
 
 ---
 
 ❓What are the `𝗻𝗶𝗰𝗲` and `𝗿𝗲𝗻𝗶𝗰𝗲` commands in Linux?
+
 nice command in Linux helps in the execution of a program/process with modified scheduling priority.
 ps -l <process_id>
 nice -n <nice_value> <command> --> nice -n 10 my process
+
 renice <nice_value> -p <process_id> --> renice 5 -p 1234
 If you've already started a process and want to change its priority, you can use the `renice` command.
 
 ---
 
 ❓What is an 𝗶𝗻𝗼𝗱𝗲 in Linux?
+
 inode is an index node. It serves as a unique identifier for a specific piece of metadata on a given filesystem.
 Inodes can be described as data structures that store information about a file, like its size, permissions, and location on disk.
 One inode per file.
@@ -112,6 +129,7 @@ One inode per file.
 ---
 
 ❓How do you check CPU utilization in Linux?
+
 lscpu command
 cat /proc/cpuinfo
 top (or) htop command
@@ -121,14 +139,17 @@ dmidecode -t processor command
 ---
 
 ❓What are the differences between the `𝘁𝗼𝗽` and `𝗵𝘁𝗼𝗽` commands?
-top" provides basic information such as process ID (PID), CPU usage, memory usage, and process status,
+
+top" provides basic information such as process ID (PID), CPU usage, memory usage, and process status.
+
 "htop" offers additional details such as the user who started the process, the command used to start the process and the process's start time.
 
 ---
 
 ❓What is a 𝗺𝗼𝘂𝗻𝘁 in Linux, and how do you create one?
+
 The mount command is used to make a device (or) file system accessible to the system and then to connect its root directory to a mount point on the local file system.
-Mount 👈
+
 fdisk -l
 mount -t type device directory
 mount -t vfat /dev/sdb1 /media/disk
@@ -136,30 +157,36 @@ mount -t vfat /dev/sdb1 /media/disk
 ---
 
 ❓How do you troubleshoot live logs in Linux?
+
 /var/log. This is such a crucial folder on your Linux systems. Open up a terminal window and issue the command cd /var/log.
 sudo tail -f /var/log/syslog
 
 ---
 
 ❓What is the `𝘀𝗲𝗱` command in Linux?
+
 sed is a stream editor, and it can be used to edit text files, with its most common use being to replace occurrences of words in a files.
 sed OPTION <SCRIPT> <INPUTFILE>
 
 ---
 
 ❓What is the `𝗮𝘄𝗸` command in Linux?
+
 Awk is mostly used for pattern scanning and processing. It searches one (or) more files to see if they contain lines that matches with the specified patterns and then perform the associated actions.
 awk '{print}' employee.txt
 
 ---
 
 ❓What are the `𝗴𝗿𝗲𝗽` and `𝗲𝗴𝗿𝗲𝗽` commands in Linux?
+
 grep: The basic grep command uses basic regular expressions (BRE) to perform text searches. It's case-sensitive and doesn't support some advanced regex features.
+
 egrep: egrep (or) grep -E) uses extended regular expressions (ERE) and offers more advanced regex features.
 
 ---
 
 ❓How can you list only directories in a Linux environment?
+
 Using ls with -l to print directories: $ ls -d */
 Using ls -F with grep : $ ls -F | grep "/$"
 Using ls -l with grep : $ ls -l | grep "^d
@@ -167,6 +194,7 @@ Using ls -l with grep : $ ls -l | grep "^d
 ---
 
 ❓How do you check the processes running in Linux?
+
 ps -e (or) ps -A displays active Linux processes in the generic UNIX format.
 ps -T prints active processes that are executed from the terminal.
 Ps -C process_name will filter the list by the process name.
@@ -174,15 +202,18 @@ Ps -C process_name will filter the list by the process name.
 ---
 
 ❓How do you get a Java thread dump in Linux?
+
 A thread dump is a snapshot of the state of all the threads of a Java process.
 Thread dumps are written in plain text, so we can save their contents to a file and look at them later in a text editor.
+
 jcmd 17264 Thread.print
 
 ---
 
 ❓How can you check the running ports on a Linux machine?
-netstat: This tool shows your server's network status.
-ss: You can view socket statistics with the ss tool.
+
+1. netstat: This tool shows your server's network status.
+2. ss: You can view socket statistics with the ss tool.
 
 For example, ss allows you to monitor TCP, UDP, and UNIX sockets.
 3. lsof: This Linux utility lists open files.
@@ -190,11 +221,13 @@ For example, ss allows you to monitor TCP, UDP, and UNIX sockets.
 ---
 
 ❓How do you declare a variable in a shell script?
+
 To declare a variable, just type the name you want and set its value using the equals sign ( = ). As you can see, to print the variable's value, you should use the dollar sign ( $ )
 
 ---
 
 ❓What do `$`, `$#`, and `$*` represent in shell scripting?
+
 `$` (dollar sign) is typically used to represent the command prompt for a regular user.
 $# stores the total number of arguments.
 $* as wildcard characters which are used to denote all the arguments
@@ -202,23 +235,27 @@ $* as wildcard characters which are used to denote all the arguments
 ---
 
 ❓How do you read a command line input in a shell script?
+
 COMMAND && printf '\0': Here we append a null byte '\0' to the output of the COMMAND so that later read will stop reading here.
 < <(COMMAND && printf '\0'): This is not new to us.
 
 ---
 
 ❓What is 𝘂𝗺𝗮𝘀𝗸 in Linux?
+
 Umask (short for user file-creation mode mask) is used by UNIX-based systems to set default permissions for newly created files and directories.
 
 ---
 
 ❓How do you change file permissions in Linux?
+
 To change file and directory permissions, use the command chmod (change mode).
 The owner of a file can change the permissions for user ( u ), group ( g ), (or) others ( o ) by adding ( + ) or subtracting ( - ) the read, write, and execute permissions.
 
 ---
 
 ❓How can you connect to remote servers without a password? How is this achieved?
+
 Verify that the SSH server is running.
 Connect to your remote machine.
 Generate private and public keys.
@@ -228,18 +265,21 @@ Login to your server using SSH keys.
 ---
 
 ❓How do you open a file in read-only mode in the vi editor?
-Use view command within vim. The syntax is: view {file-name}
-Use vim/vi command line option. The syntax is: vim -R {file-name}
-Modifications not allowed using command line option: The syntax is: vim -M {file-name}
+
+Use the view command within Vim. The syntax is: view {file-name}
+Use the vim/vi command line option. The syntax is: vim -R {file-name}
+Modifications are not allowed using the command line option: The syntax is: vim -M {file-name}
 
 ---
 
 ❓What is the purpose of the `𝗲𝘅𝗽𝗼𝗿𝘁` command in Linux?
+
 The 'export' command in Linux is a built-in shell command used to export environment variables from the shell to child processes with the syntax, export variable="value" . It allows you to set environment variables that will be available to all child processes.
 
 ---
 
 ❓How do you send 𝗲𝗿𝗿𝗼𝗿 𝗹𝗼𝗴𝘀 and 𝘀𝘁𝗱𝗼𝘂𝘁 𝗹𝗼𝗴𝘀 to different files in Linux?
+
 The result is having error messages sent to the same location as standard output.
 The command consists of: > [file_name] - Directs the stdout to the specified file. 2>&1 - Redirects the stderr to the same location as the standard output.
 command-name > output.txt command-name > stdout.txt.
@@ -248,21 +288,23 @@ command-name 2> errors.txt command-name 2> stderr.txt.
 ---
 
 ❓What is the `𝗻𝗼𝗵𝘂𝗽` command in Linux?
+
 The nohup stands for "no hang-up", it is a Linux utility that keeps the processes running even after exiting the terminal (or) shell.
 It allows users to execute commands (or) processes that continue running even after they log out of the terminal (or) close the session.
 
 ---
 
 ❓What does the `𝗻𝗲𝘁𝘀𝘁𝗮𝘁` command do in Linux?
+
 netstat command stands for Network statistics. It displays information about different interface statistics, including open sockets, routing tables, and connection information.
 
 ---
 
 ❓How do you run a script at 𝗯𝗼𝗼𝘁 𝗹𝗲𝘃𝗲𝗹 in Linux?
+
 Using systemd → On systems that use systemd, you can create a systemd service file for your script and configure it to run on startup.
 Using cron → You can use the cron daemon to schedule your script to run at startup.
 Using init.
-using .
 Using /etc/rc.
 
 ---
